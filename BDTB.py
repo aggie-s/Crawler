@@ -67,14 +67,14 @@ class BDTB:
         contents = []
         for item in items:
             content = "\n" + self.tool.replace(item) + "\n"
-            contents.append(content.encode('utf-8'))
+            contents.append(content)
         return contents
 
     def setFileTitle(self, title):
         if title is not None:
-            self.file = open(title + ".txt", "w+")
+            self.file = open(title + ".txt", "w", encoding='utf-8')
         else:
-            self.file = open(self.defaultTitle + ".txt", "w+")
+            self.file = open(self.defaultTitle + ".txt", "w", encoding='utf-8')
 
     def writeData(self, contents):
         for item in contents:
